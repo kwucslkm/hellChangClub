@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+    <th:block th:fragment="nav">
+    <nav>
+        <style>
+            #nav{
+                height: 40px;
+                background-color: darkblue;
+            }
+            #hListL li a{
+                text-decoration-line: none;
+                color:white;
+            }
+            #hListL li{
+                float: left;
+                list-style: none;
+                margin-right: 8px;
+                text-decoration-line: none;
+                padding-top:7px;
+            }
+            #hListR li a{
+                text-decoration-line: none;
+                color:yellow;
+            }
+            #hListR,
+            #hListR li,
+            #hListR span{
+                float: right;
+                list-style: none;
+                margin-right: 8px;
+                text-decoration-line: none;
+                padding-top:4px;
+            }
+            #hListR span,#hListR span{
+                color:orange;
+                padding-top:0px;
+            }
+        </style>
+
+        <div id="nav">
+            <ul id="hListL">
+                <li><a href = "/main">홈으로 </a></li>
+<!--                <li><a href = "/memberPages/saveForm">회원가입</a></li>-->
+<!--                <li><a href = "/bandMemberPages/memberLogin">로그인</a></li>-->
+                <span th:if="${session.loginEmail != null && session.loginEmail == 'kwucsani' || session.loginEmail == 'admin'}">
+                    <li><a href = "/healthMemberPages/memberList">회원목록</a></li>
+                </span>
+                <div id="hListR">
+
+                    <span th:if="${session.loginEmail != null}">
+                        <li><a href="/healthMeberPages/mypage">로그아웃 </a> </li>
+                        <li><a th:href="@{|/member/fromNav/${session.loginEmail}|}">마이페이지</a></li>
+                        <li><span>님 환영합니다.</span><span th:text="${session.loginEmail}"></span></li>
+                    </span>
+                    <span th:unless="${session.loginEmail != null}">
+                        <li><a href="/healthMeberPages/siteMap">사이트맵</a></li>
+                    </span>
+<!--                    <th:block th:if="${session.loginEmail != null}">-->
+<!--                        <li><a th:href="@{|/member/${session.loginEmail}|}">마이페이지</a></li>-->
+<!--                        <li><span>님 환영합니다.</span><span th:text="${session.loginEmail}"></span></li>-->
+<!--                    </th:block>-->
+<!--                    <th:block th:if="${session.loginEmail == null}">-->
+<!--                        <li><span>사이트맵</span></li>-->
+<!--                    </th:block>-->
+                </div>
+            </ul>
+        </div>
+        session값 확인 : <P th:text="${session.loginEmail}"></P>
+    </nav>
+</th:block>
+</html>

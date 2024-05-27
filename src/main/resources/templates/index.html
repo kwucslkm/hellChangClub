@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<th:block layout:fragment="content">
+
+<style>
+    #indexMain {
+        border: 0px solid red;
+        text-align: center;
+        padding: 30px;
+        margin : auto;
+        width: 200px;
+        justify-content: center;
+    }
+</style>
+
+<h2 style ="text-align: center">index.html</h2>
+<div id="indexMain">
+    <a href = "/healthMemberPages/saveForm">회원가입 </a><br><br>
+    <a href = "/healthMemberPages/memberLogin">로그인</a><br><br>
+    <a href = "/healthMemberPages/memberList">회원목록</a><br>
+
+</div>
+</th:block>
+</html>

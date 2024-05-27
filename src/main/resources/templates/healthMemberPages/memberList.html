@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<th:block layout:fragment="content">
+
+<style>
+    h5{
+        text-align: center;
+    }
+    #listMain {
+        text-align: center;
+        /*border: solid 1px red;*/
+        display: flex;
+        justify-content: center;
+        width: 700px;
+        padding-top: 10px;
+        margin : auto;
+        /*style="text-align: center; border : solid; width : 400px;*/
+    }
+    #memberListTable{
+        border: solid blue 1px;
+        text-align: center;
+        border-collapse: collapse;
+        justify-content: center;
+    }
+    #memberListTable tr,
+    #memberListTable tr th,
+    #memberListTable tr td{
+        border: solid blue 1px;
+        text-align: center;
+        border-collapse: collapse;
+    }
+
+</style>
+<body>
+    <h5>회원 리스트</h5>
+    <div id="listMain">
+        <table id ="memberListTable">
+            <tr>
+                <th>id</th>
+                <th>memberEmail</th>
+                <th>memberPassword</th>
+                <th>memberName</th>
+                <th>상세조회</th>
+                <th>삭제</th>
+            </tr>
+            <tr th:each="member : ${memberList}">
+                <td th:text="${member.id}"></td>
+                <td th:text="${member.memberEmail}"></td>
+                <td th:text="${member.memberPassword}"></td>
+                <td th:text="${member.memberName}"></td>
+                <td>
+                    <a th:href="@{|/member/${member.id}|}">조회</a>
+                </td>
+                <td>
+                    <a th:href="@{|/member/delete/${member.id}|}">삭제</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</th:block>
+</html>

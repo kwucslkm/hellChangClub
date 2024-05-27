@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<th:block layout:fragment="content">
+    <meta charset="UTF-8">
+<style>
+    #loginFormDiv {
+        text-align: center;
+        border: solid 1px cornflowerblue; border-radius: 3px;
+        /*display: flex;*/
+        /*justify-content: center;*/
+        width: 420px;
+        height: 280px;
+        top: 25%;
+        left: 50%;
+        position: absolute;
+        margin : -150px 0 0 -200px;
+    }
+    #loginInputDiv{
+        background-color: aliceblue;
+        padding: 40px 0px;
+        width: 380px;
+        height: 110px;
+        top: 35%;
+        left: 36%;
+        position: absolute;
+        margin : -50px 0 0 -131px;
+    }
+    #loginBtn{
+        width : 300px; height: 45px;
+        margin-top:20px;
+        background-color: cornflowerblue;
+        border : 0px ;border-radius: 3px;
+    }
+    #saveBox{
+        border-radius: 5px; border : 0px;
+        /*position: absolute;*/
+        width : 320px; height: 50px;
+        /*top:50%; left:50%;*/
+        /*margin: 0 0 0 -160px;*/
+        font-size : 15px;font-weight: bold;
+        text-align: center;
+        margin: 250px auto;
+
+
+    }
+</style>
+        <form action="/healthMemberPages/bandMemberLogin" method="post">
+            <div id="loginFormDiv" >
+                <th:block th:if="${session.loginEmail == null}">
+                    <div id="saveBox">
+                        <a href = "/memberPages/saveForm">회원가입</a>&nbsp;.&nbsp;
+                        <a href = "/healthMemberPages/saveForm">아이디찾기</a>&nbsp;.&nbsp;
+                        <a href = "/healthMemberPages/saveForm">비밀번호찾기</a>
+                    </div>
+                </th:block>
+                <div id = "loginInputDiv">
+                    이메일: <input type="text" name="memberEmail" id="memberEmail"><br>
+                    비밀번호:<input type="text" name="memberPassword" id="memberPassword"><br>
+                    <input type="submit" id = "loginBtn" value="로그인">
+                </div>
+
+            </div>
+        </form>
+
+</th:block>
+</html>

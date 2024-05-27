@@ -1,0 +1,41 @@
+# server port ?? ??
+server:
+  port: 8081
+# data base ?? ??
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.0.50:3306/member_board?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+#    url: jdbc:mysql://218.146.11.131:4406/member_board?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+#    url: jdbc:mysql://119.196.130.251:4406/member_board?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: 1001
+#    username: member_user
+
+  # thymeleaf ?? ??
+  thymeleaf:
+    cache: false
+
+  # spring data jpa ??
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    #  ddl-auto: create    ??? ??? TABLE? ?????? > ??? ??? reset
+    #  ddl-auto: update    ????? ????
+# db query log ?? ??
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: trace
+        type:
+          descriptor:
+            sql:
+              BasicBinder: trace
+
+naver-cloud-sms.accessKey: ZKxzIkHO60IpdWw47JQR
+naver-cloud-sms.secretKey: aiedH7otonnMpfCDHZBpxBkRKbJgv6skOG3WKL4k
+naver-cloud-sms.serviceId: ncp:sms:kr:309336187163:save_sms_service
+naver-cloud-sms.senderPhone: 01068441656

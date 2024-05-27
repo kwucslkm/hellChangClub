@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<th:block layout:fragment="content">
+    <style>
+        #memberDetailDiv{
+
+        }
+        #memberDetailTable,
+         #memberDetailTable tr,
+         #memberDetailTable tr th,
+         #memberDetailTable tr td{
+             border: solid 2px cornflowerblue;
+             border-radius: 3em;
+             border-collapse: collapse;
+             margin : auto;
+             text-align: center;
+         }
+        #memberDetailTable input {
+            border-width: 0;
+        }
+        #memberDetailTable input:focus{
+            outline: none;
+        }
+
+    </style>
+    <div id ="memberDetailDiv">
+<table id = "memberDetailTable">
+    <tr>
+        <th>memberId</th>
+        <td th:text="${member.id}"></td>
+    </tr>
+    <tr>
+        <th>memberEmail</th>
+        <td th:text="${member.memberEmail}"></td>
+    </tr>
+    <tr>
+        <th>memberPassword</th>
+        <td th:text="${member.memberPassword}"></td>
+    </tr>
+    <tr>
+        <th>memberName</th>
+        <td th:text="${member.memberName}"></td>
+    </tr>
+
+    <tr>
+        <td colspan="2">
+            <a th:href="@{|/templates/healthMemberPages/bandMemberUpdate/${member.memberEmail}|}">정보수정</a>
+        </td>
+    </tr>
+</table>
+    </div>
+</th:block>
+</html>

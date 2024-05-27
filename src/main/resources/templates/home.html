@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<th:block layout:fragment="content">
+
+<style>
+    #loginBox {
+        border: 1px solid aliceblue; border-radius: 5px;
+        background-color: aliceblue;
+        width: 320px; height: 150px;
+        margin : 10px;
+        float: right;
+        position: relative;
+
+    }
+    #mainLoginBtn {
+        background-color: cornflowerblue; border-radius: 5px; border : 0px;
+        position: absolute;
+        width : 300px; height: 45px;
+        top:50%; left:50%;
+        margin: -25px 0 0 -150px;
+        font-size : 18px; font-weight: bold; color: wheat;
+    }
+    #saveBox{
+        border-radius: 5px; border : 0px;
+        position: absolute;
+        width : 320px; height: 50px;
+        top:75%; left:50%;
+        margin: 0 0 0 -160px;
+        font-size : 15px;font-weight: bold;
+
+        text-align: center;
+    }
+    #saveBox a{
+        text-decoration-line: none;
+    }
+    #helloBox{
+        border-radius: 5px; border : 0px;
+        color: darkolivegreen;
+        position: absolute;
+        width : 280px; height: 50px;
+        top:10%; left:50%;
+        margin: 0 0 0 -140px;
+        font-size : 17px;font-weight: bold;
+    }
+</style>
+    <div id="loginBox">
+        <div id="helloBox" name="helloBox">
+            오늘도 좋은하루 되세요.^^
+        </div>
+<!--      session값 확인 : <P th:text="${session.loginEmail}"></P>-->
+        <th:block th:if="${session.loginEmail == null}">
+        <button id = "mainLoginBtn" onclick="location.href ='/MemberPages/memberLogin';"> 로그인</button><br>
+
+            <div id="saveBox" name="saveBox">
+                <a href = "/memberPages/saveForm">회원가입</a>&nbsp;.&nbsp;
+                <a href = "/healthMemberPages/saveForm">아이디찾기</a>&nbsp;.&nbsp;
+                <a href = "/healthMemberPages/saveForm">비밀번호찾기</a>
+            </div>
+        </th:block>
+    </div>
+
+</th:block>
+<script th:inline="javascript">
+    const logoutValue = <th:block th:text="${logoutValue}"></th:block>
+    console.log("logoutValue=====>",logoutValue);
+    console.log("logoutValue=====>",<th:block th:text="${logoutValue}"></th:block>);
+</script>
+</html>
