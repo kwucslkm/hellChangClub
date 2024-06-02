@@ -35,8 +35,7 @@ public class MemberController {
         return "healthMemberPages/bandMemberLogin";
     }
     @PostMapping("/healthMemberPages/bandMemberLogin")
-    public String login(@ModelAttribute BandMemberDTO bandMemberDTO,
-                        HttpSession httpSession){
+    public String login(@ModelAttribute BandMemberDTO bandMemberDTO, HttpSession httpSession){
         BandMemberDTO loginResult = bandMemberService.login(bandMemberDTO);
         if (loginResult != null){
             httpSession.setAttribute("loginEmail", loginResult.getMemberEmail());

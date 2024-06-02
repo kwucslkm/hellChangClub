@@ -40,13 +40,10 @@
         <div id="nav">
             <ul id="hListL">
                 <li><a href = "/main">홈으로 </a></li>
-<!--                <li><a href = "/memberPages/saveForm">회원가입</a></li>-->
-<!--                <li><a href = "/bandMemberPages/memberLogin">로그인</a></li>-->
                 <span th:if="${session.loginEmail != null && session.loginEmail == 'kwucsani' || session.loginEmail == 'admin'}">
                     <li><a href = "/healthMemberPages/memberList">회원목록</a></li>
                 </span>
                 <div id="hListR">
-
                     <span th:if="${session.loginEmail != null}">
                         <li><a href="/healthMeberPages/mypage">로그아웃 </a> </li>
                         <li><a th:href="@{|/member/fromNav/${session.loginEmail}|}">마이페이지</a></li>
