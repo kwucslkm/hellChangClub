@@ -4,7 +4,7 @@ import com.hellChang.hellChangClub.dto.BandMemberDTO;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Getter
 @Setter
@@ -23,7 +23,7 @@ public class BandMemberEntity {
     @Column(length = 30, nullable = true, unique = true)
     private String memberNickName;
     @Column(length = 20, nullable = true, unique = true)
-    private String memberMobile;
+    private String phone;
     @Column(length = 30, nullable = true)
     private String memberLocal;
     @Column(length = 40, nullable = true)
@@ -44,6 +44,7 @@ public class BandMemberEntity {
         bandMemberEntity.setMemberEmail(bandMemberDTO.getMemberEmail());
         bandMemberEntity.setMemberPassword(bandMemberDTO.getMemberPassword());
         bandMemberEntity.setMemberName(bandMemberDTO.getMemberName());
+        bandMemberEntity.setPhone(bandMemberDTO.getPhone());
 //        bandMemberEntity.setMemberBirth(bandMemberDTO.getMemberBirth());
 //        bandMemberEntity.setMemberCreateAt(bandMemberDTO.getMemberCreateAt());
 //        bandMemberEntity.setMemberNickName(bandMemberDTO.getMemberNickName());
@@ -62,6 +63,8 @@ public class BandMemberEntity {
         bandMemberEntity.setMemberEmail(bandMemberDTO.getMemberEmail());
         bandMemberEntity.setMemberPassword(bandMemberDTO.getMemberPassword());
         bandMemberEntity.setMemberName(bandMemberDTO.getMemberName());
+        bandMemberEntity.setPhone(bandMemberDTO.getPhone());
+
 //        bandMemberEntity.setMemberBirth(bandMemberDTO.getMemberBirth());
 //        bandMemberEntity.setMemberCreateAt(bandMemberDTO.getMemberCreateAt());
 //        bandMemberEntity.setMemberNickName(bandMemberDTO.getMemberNickName());

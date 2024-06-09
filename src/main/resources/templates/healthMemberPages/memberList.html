@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
 <th:block layout:fragment="content">
-
+<meta charset="UTF-8">
 <style>
     h5{
         text-align: center;
@@ -31,7 +31,7 @@
     }
 
 </style>
-<body>
+
     <h5>회원 리스트</h5>
     <div id="listMain">
         <table id ="memberListTable">
@@ -40,6 +40,7 @@
                 <th>memberEmail</th>
                 <th>memberPassword</th>
                 <th>memberName</th>
+                <th>phone</th>
                 <th>상세조회</th>
                 <th>삭제</th>
             </tr>
@@ -48,6 +49,7 @@
                 <td th:text="${member.memberEmail}"></td>
                 <td th:text="${member.memberPassword}"></td>
                 <td th:text="${member.memberName}"></td>
+                <td th:text="${member.phone}"></td>
                 <td>
                     <a th:href="@{|/member/${member.id}|}">조회</a>
                 </td>
@@ -57,6 +59,6 @@
             </tr>
         </table>
     </div>
-</body>
+
 </th:block>
 </html>

@@ -17,7 +17,7 @@ public class BandMemberDTO {
     private String memberPassword;
     private String memberName;
     private String memberNickName;
-    private String memberMobile;
+    private String phone;
     private String memberLocal;
     private String memberInterest;
     private String memberBirth;
@@ -32,6 +32,7 @@ public class BandMemberDTO {
         memberDTO.setMemberEmail(bandMemberEntity.getMemberEmail());
         memberDTO.setMemberName(bandMemberEntity.getMemberName());
         memberDTO.setMemberPassword(bandMemberEntity.getMemberPassword());
+        memberDTO.setPhone(bandMemberEntity.getPhone());
         return memberDTO;
     }
 

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -34,7 +34,7 @@ public class MemberController {
     public String loginForm(){
         return "healthMemberPages/bandMemberLogin";
     }
-    @PostMapping("/healthMemberPages/bandMemberLogin")
+    @PostMapping("/healthMemberPages/MemberLogin")
     public String login(@ModelAttribute BandMemberDTO bandMemberDTO, HttpSession httpSession){
         BandMemberDTO loginResult = bandMemberService.login(bandMemberDTO);
         if (loginResult != null){

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
 <th:block layout:fragment="content">
+    <meta charset="UTF-8">
 <style>
     #saveFormDiv {
         text-align: center;
@@ -14,12 +15,13 @@
     }
 </style>
 
-    <h2 style ="text-align: center;">saveForm.html</h2>
+    <h2 style ="text-align: center;">H.C.C 회원가입</h2>
         <form action="/healthMemberPages/saveForm" method="post">
             <div id="saveFormDiv">
                 이메일: <input type="text" name="memberEmail" id="memberEmail"><br>
-                비밀번호: <input type="text" name="memberPassword" id="memberPassword"><br>
+                비밀번호: <input type="password" name="memberPassword" id="memberPassword"><br>
                 이름: <input type="text" name="memberName" id="memberName"><br>
+                모바일:<input type="text" name="phone" id="phone"><br>
                 <input type="submit" value="가입">
             </div>
         </form>
