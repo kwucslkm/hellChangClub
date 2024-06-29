@@ -18,26 +18,26 @@ public class BandMemberEntity {
     private String memberEmail;
     @Column(length = 20, nullable = true)
     private String memberPassword;
-    @Column(length = 30, nullable = true, unique = true)
+    @Column(length = 30, nullable = true)
     private String memberName;
     @Column(length = 30, nullable = true, unique = true)
     private String memberNickName;
     @Column(length = 20, nullable = true, unique = true)
     private String phone;
-    @Column(length = 30, nullable = true)
-    private String memberLocal;
-    @Column(length = 40, nullable = true)
-    private String memberInterest;
-    @Column(length = 40, nullable = true)
-    private String memberBirth;
-    @Column(length = 40, nullable = true)
-    private String memberCreateAt;
-    @Column(length = 40, nullable = true)
-    private String memberProfileFile;
-    @Column(length = 40, nullable = true)
-    private String memberOriginalFileName;
-    @Column(length = 40, nullable = true)
-    private String memberStoredFileName;
+//    @Column(length = 30, nullable = true)
+//    private String memberLocal;
+//    @Column(length = 40, nullable = true)
+//    private String memberInterest;
+//    @Column(length = 40, nullable = true)
+//    private String memberBirth;
+//    @Column(length = 40, nullable = true)
+//    private String memberCreateAt;
+//    @Column(length = 40, nullable = true)
+//    private String memberProfileFile;
+//    @Column(length = 40, nullable = true)
+//    private String memberOriginalFileName;
+//    @Column(length = 40, nullable = true)
+//    private String memberStoredFileName;
 
     public static BandMemberEntity toBandMemberEntity(BandMemberDTO bandMemberDTO) {
         BandMemberEntity bandMemberEntity = new BandMemberEntity();
