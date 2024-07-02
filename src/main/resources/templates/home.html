@@ -60,11 +60,9 @@
     </div>
 
 </th:block>
-<th:block layout="script">
 <script th:inline="javascript">
-    let logoutValue = [[[${session.loginEmail}]]];
+    const logoutValue = <th:block th:text="${logoutValue}"></th:block>
     console.log("logoutValue=====>",logoutValue);
-
+    console.log("logoutValue=====>",<th:block th:text="${logoutValue}"></th:block>);
 </script>
-</th:block>
 </html>
