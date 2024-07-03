@@ -1,3 +1,12 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <title>Home</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Welcome Home</h1>-->
+<!--</body>-->
+<!--</html>-->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
 <th:block layout:fragment="content">
@@ -60,9 +69,9 @@
     </div>
 
 </th:block>
-<script th:inline="javascript">
-    const logoutValue = <th:block th:text="${logoutValue}"></th:block>
-    console.log("logoutValue=====>",logoutValue);
-    console.log("logoutValue=====>",<th:block th:text="${logoutValue}"></th:block>);
-</script>
+<th:block layout:fragment="script">
+    <script th:inline="javascript">
+
+    </script>
+</th:block>
 </html>
